@@ -12,6 +12,7 @@ Get RPC block status
 - Update **networks.json** with block explorer api keys and rpc node details (name, ip address, ws/http ports)
 
 ## Running application
+Application can be run with any Python WSGI/ASGI HTTP Server. In this instance, application will be ran with Uvicorn.  
 `python3.11 -m uvicorn main:app --host 0.0.0.0 --port 80`
 
 ## Examples
