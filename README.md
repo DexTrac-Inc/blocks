@@ -7,6 +7,10 @@ Get RPC block status
 ## Installation
 `python3.11 -m pip install -r requirements.txt`
 
+## Configuration
+- Copy and rename **networks_example.json** as **networks.json**
+- Update **networks.json** with block explorer api keys and rpc node details (name, ip address, ws/http ports)
+
 ## Running application
 `python3.11 -m uvicorn main:app --host 0.0.0.0 --port 80`
 
