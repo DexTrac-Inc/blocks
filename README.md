@@ -1,4 +1,4 @@
-# RPC Block
+# RPC Blocks
 Get RPC block status
 
 ## Prerequisites
