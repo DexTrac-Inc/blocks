@@ -1,0 +1,171 @@
+{
+    "networks": {
+        "ethereum": {
+            "explorer": {
+                "ui": "https://etherscan.io",
+                "api": "https://api.etherscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "arbitrum": {
+            "explorer": {
+                "ui": "https://arbiscan.io",
+                "api": "https://api.arbiscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "avalanche": {
+            "explorer": {
+                "ui": "https://snowtrace.io",
+                "api": "https://api.snowtrace.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "bsc": {
+            "explorer": {
+                "ui": "https://bscscan.com",
+                "api": "https://api.bscscan.com/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "fantom": {
+            "explorer": {
+                "ui": "https://ftmscan.com",
+                "api": "https://api.ftmscan.com/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "optimism": {
+            "explorer": {
+                "ui": "https://optimistic.etherscan.io",
+                "api": "https://api-optimistic.etherscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "polygon": {
+            "explorer": {
+                "ui": "https://polygonscan.com",
+                "api": "https://api.polygonscan.com/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "metis": {
+            "explorer": {
+                "ui": "https://andromeda-explorer.metis.io",
+                "api": "https://andromeda-explorer.metis.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "gnosis": {
+            "explorer": {
+                "ui": "https://gnosisscan.io",
+                "api": "https://api.gnosisscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "moonbeam": {
+            "explorer": {
+                "ui": "https://moonscan.io",
+                "api": "https://api-moonbeam.moonscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        },
+        "moonriver": {
+            "explorer": {
+                "ui": "https://moonriver.moonscan.io",
+                "api": "https://api-moonriver.moonscan.io/api",
+                "apiKey": "<API KEY IF REQUIRED>"
+            }
+        }
+    },
+    "nodes": {
+        "10.0.0.0001": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "ethereum"
+        },
+        "10.0.0.0002": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "arbitrum"
+        },
+        "10.0.0.0003": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "/ext/bc/C/ws",
+            "httpAddtlUrl": "/ext/bc/C/rpc",
+            "network": "avalanche"
+        },
+        "10.0.0.0004": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "bsc"
+        },
+        "10.0.0.0005": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "fantom"
+        },
+        "10.0.0.0006": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "gnosis"
+        },
+        "10.0.0.0007": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "metis"
+        },
+        "10.0.0.0008": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "moonbeam"
+        },
+        "10.0.0.0009": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "moonriver"
+        },
+        "10.0.0.0010": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "optimism"
+        },
+        "10.0.0.0011": {
+            "name": "<RPC NAME>",
+            "wsPort": "<WS PORT>",
+            "httpPort": "<HTTP PORT>",
+            "wsAddtlUrl": "",
+            "httpAddtlUrl": "",
+            "network": "polygon"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+web3 @ git+https://github.com/ethereum/web3.py.git
+fastapi>=0.88.0
+uvicorn>=0.20.0
