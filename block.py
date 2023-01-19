@@ -78,7 +78,7 @@ def get_network(network, node=None):
                 else:
                     continue
             else:
-                node_block, sync = get_node_block(ip)
+                node_block, sync, peers = get_node_block(ip)
             
             node_status.append({
                 nodes[ip]['name']: {
