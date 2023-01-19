@@ -55,6 +55,7 @@ def get_node_block(ip):
 
         syncing = w3.eth._syncing()
         latest = w3.eth.get_block('latest')
+        peers = w3.net.peer_count
         
         if syncing == None:
             sync_status = "not supported"
@@ -62,7 +63,7 @@ def get_node_block(ip):
             sync_status = 'synched'
         else:
             sync_status = 'syncing'
-        return int(latest['number']), sync_status
+        return int(latest['number']), sync_status, peers
     return 0, 'Failed to connect'
 
 def get_network(network, node=None):
@@ -73,7 +74,7 @@ def get_network(network, node=None):
         if network == nodes[ip]['network']:
             if not node == None:
                 if nodes[ip]['name'] == node:
-                    node_block, sync = get_node_block(ip)
+                    node_block, sync, peers = get_node_block(ip)
                 else:
                     continue
             else:
@@ -83,7 +84,8 @@ def get_network(network, node=None):
                 nodes[ip]['name']: {
                     "nodeBlock": node_block,
                     "syncStatus": sync,
-                    "upToDate": block_check(explorer_block, node_block)
+                    "upToDate": block_check(explorer_block, node_block),
+                    "peers": peers
                 }
                 })
     network_status.append({
@@ -103,12 +105,13 @@ def get_all_network():
         for ip in nodes:
             # print(ip)
             if network == nodes[ip]['network']:
-                node_block, sync = get_node_block(ip)
+                node_block, sync, peers = get_node_block(ip)
                 node_status.append({
                     nodes[ip]['name']: {
                         "nodeBlock": node_block,
                         "syncStatus": sync,
-                        "upToDate": block_check(explorer_block, node_block)
+                        "upToDate": block_check(explorer_block, node_block),
+                        "peers": peers
                     }
                     })
         network_status.append({
