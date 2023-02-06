@@ -55,7 +55,10 @@ def get_node_block(ip):
 
         syncing = w3.eth._syncing()
         latest = w3.eth.get_block('latest')
-        peers = w3.net.peer_count
+        try:
+            peers = w3.net.peer_count
+        except Exception:
+            peers = 'not supported'
         
         if syncing == None:
             sync_status = "not supported"
@@ -64,7 +67,7 @@ def get_node_block(ip):
         else:
             sync_status = 'syncing'
         return int(latest['number']), sync_status, peers
-    return 0, 'Failed to connect'
+    return 0, 'Failed to connect', 0
 
 def get_network(network, node=None):
     network_status = []
