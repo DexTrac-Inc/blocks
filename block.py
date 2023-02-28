@@ -60,13 +60,18 @@ def get_node_block(ip):
         except Exception:
             peers = 'not supported'
         
+        try:
+            client_version = w3.client_version
+        except Exception:
+            client_version = 'not supported'
+        
         if syncing == None:
             sync_status = "not supported"
         elif syncing == False:
             sync_status = 'synched'
         else:
             sync_status = 'syncing'
-        return int(latest['number']), sync_status, peers
+        return int(latest['number']), sync_status, peers, client_version
     return 0, 'Failed to connect', 0
 
 def get_network(network, node=None):
@@ -77,18 +82,20 @@ def get_network(network, node=None):
         if network == nodes[ip]['network']:
             if not node == None:
                 if nodes[ip]['name'] == node:
-                    node_block, sync, peers = get_node_block(ip)
+                    node_block, sync, peers, client_version = get_node_block(ip)
                 else:
                     continue
             else:
-                node_block, sync, peers = get_node_block(ip)
+                node_block, sync, peers, client_version = get_node_block(ip)
             
             node_status.append({
                 nodes[ip]['name']: {
                     "nodeBlock": node_block,
                     "syncStatus": sync,
                     "upToDate": block_check(explorer_block, node_block),
-                    "peers": peers
+                    "peers": peers,
+                    "ip": ip,
+                    "clientVersion": client_version
                 }
                 })
     network_status.append({
@@ -108,13 +115,15 @@ def get_all_network():
         for ip in nodes:
             # print(ip)
             if network == nodes[ip]['network']:
-                node_block, sync, peers = get_node_block(ip)
+                node_block, sync, peers, client_version = get_node_block(ip)
                 node_status.append({
                     nodes[ip]['name']: {
                         "nodeBlock": node_block,
                         "syncStatus": sync,
                         "upToDate": block_check(explorer_block, node_block),
-                        "peers": peers
+                        "peers": peers,
+                        "ip": ip,
+                        "clientVersion": client_version
                     }
                     })
         network_status.append({
