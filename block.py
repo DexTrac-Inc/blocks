@@ -45,7 +45,10 @@ def get_explorer_block(network, url, api_key):
 
 def get_node_block(ip):
     node_info = nodes[ip]
-    url = f"http://{ip}:{node_info['httpPort']}{node_info['httpAddtlUrl']}"
+    if node_info['connectMethod'] and node_info['connectMethod'] == 'https':
+        url = f"https://{ip}:{node_info['httpPort']}{node_info['httpAddtlUrl']}"
+    else:
+        url = f"http://{ip}:{node_info['httpPort']}{node_info['httpAddtlUrl']}"
     # print(url)
     w3 = Web3(Web3.HTTPProvider(url, request_kwargs={'timeout': 3}))
     
